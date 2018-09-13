@@ -3,14 +3,14 @@
 // var PORT = process.env.PORT || 3030;
 
 var server = require("././server.js")
-// var friends = require("./")
+var friends = require("./data/friends.js")
 
 server.app.get("/api/friends", function(req, res){
-    return res.json()
+    return res.json(friends)
 })
 
-server.app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "app/public/home.html"))
+server.app.post("/api/friends", function(req, res) {
+    var newProfile = req.body
 })
 
 
